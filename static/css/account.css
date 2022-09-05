@@ -1,0 +1,18 @@
+body {
+    background-image: url("../img/bg4.jpg") !important;
+    background-size:cover !important;
+    
+    
+}
+.logo {
+    color:dodgerblue;
+    font-weight: 1000;
+}
+.logo a:hover {cursor:pointer}
+.logo a:hover,
+.logo a:active {
+    text-decoration: none;
+}
+.card-footer{
+    background-color: rgb(134, 133, 133) !important;
+}

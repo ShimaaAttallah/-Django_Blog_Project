@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+
+{% block title %} Create new topic {%endblock%}
+{% block breadcrumb %}
+    <li class="breadcrumb-item active">
+      <strong><a href="{% url 'home' %}">Blogs</a></strong>
+    </li>
+    <li class="breadcrumb-item "><a href="{% url 'blog_topics' blog.pk %}">{{blog.name}}</a></li>
+    <li class="breadcrumb-item active">New Topic</li>
+  
+{%endblock%}
+{% block content %} 
+<form method="post" novalidate>
+    {% csrf_token %}
+    {% include 'includes/form.html'%}
+    <button type="submit" class="btn btn-success" >Add Topic</button>
+</form>    
+{% endblock %}

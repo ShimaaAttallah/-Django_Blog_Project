@@ -1,0 +1,34 @@
+{% extends 'base.html' %} 
+{% block title %} {{blog.name}} {%endblock%}
+{% block breadcrumb %}
+    <li class="breadcrumb-item active">
+      <strong><a href="{% url 'home' %}">Blogs</a></strong>
+    </li>
+    <li class="breadcrumb-item active">{{blog.name}}</li>
+  
+{%endblock%} 
+{% block content %}
+<a href="{% url 'new_topic' blog.pk %}" class="btn btn-brimary">New Topic</a>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Topic</th>
+      <th>Created By</th>
+      <th>Posts</th>
+      <th>Views</th>
+      <th>Created Date</th>
+    </tr>
+  </thead>
+  <tbodt>
+    {%for topic in blog.topics.all%}
+    <tr>
+      <td>{{topic.subject}}</td>
+      <td>{{topic.created_by.username}}</td>
+      <td>0</td>
+      <td>0</td>
+      <td>{{topic.created_dt}}</td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>    
+{%endblock%}
